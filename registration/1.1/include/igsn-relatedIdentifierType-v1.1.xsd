@@ -12,6 +12,7 @@
             <xs:enumeration value="lsid"/>
             <xs:enumeration value="url"/>
             <xs:enumeration value="urn"/>
+            <xs:enumeration value="igsn"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>
