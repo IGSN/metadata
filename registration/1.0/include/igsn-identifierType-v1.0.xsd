@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://igsn.org/schema/kernel-v.1.0"
+    xmlns:igsn="http://igsn.org/schema/kernel-v.1.0">
+    <xs:simpleType name="identifierType">
+        <xs:annotation>
+            <xs:documentation>The type of identifier. Currently only IGSN is allowed</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="igsn"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

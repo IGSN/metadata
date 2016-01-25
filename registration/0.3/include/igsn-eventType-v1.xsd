@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://igsn.org/schema/kernel-v.0.3"
+    xmlns:igsn="http://igsn.org/schema/kernel-v.0.3">
+    <xs:simpleType name="eventType">
+        <xs:annotation>
+            <xs:documentation>The type of status of the physical object and object registration. Version 0.3</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="submitted"/><!-- Date of the initial registration. -->
+            <xs:enumeration value="registered"/><!-- The object is registered. -->
+            <xs:enumeration value="updated"/><!-- Date of the last metadata update. -->
+            <xs:enumeration value="deprecated"/><!-- The object description is deprecated. The entry is no longer relevant, e.g. due to duplicate registration. -->
+            <xs:enumeration value="destroyed"/><!-- The object is destroyed. -->
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

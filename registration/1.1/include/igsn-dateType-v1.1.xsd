@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://igsn.org/schema/kernel-v.1.1"
+    xmlns:igsn="http://igsn.org/schema/kernel-v.1.1">
+
+    <xs:simpleType name="dateTimeWithoutMinutes">
+        <xs:annotation>
+            <xs:documentation>1997-07-16T19:20</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d{4}-\d\d-\d\dT\d\d:\d\d" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="dateTimeWithoutMinutesPlusTimeZone">
+        <xs:annotation>
+            <xs:documentation>1997-07-16T19:20+01:00</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d{4}-\d\d-\d\dT\d\d:\d\d\+\d\d:\d\d" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="W3CDTFdate">
+        <xs:annotation>
+            <xs:documentation>Definition of W3CDTF compliant date. see: http://www.w3.org/TR/NOTE-datetime</xs:documentation>
+        </xs:annotation>
+         <xs:union memberTypes="xs:gYear xs:gYearMonth xs:date xs:dateTime igsn:dateTimeWithoutMinutes igsn:dateTimeWithoutMinutesPlusTimeZone"/>
+    </xs:simpleType>
+</xs:schema>

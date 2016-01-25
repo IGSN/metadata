@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://igsn.org/schema/kernel-v.0.3"
+    xmlns:igsn="http://igsn.org/schema/kernel-v.0.3"
+	 elementFormDefault="qualified">
+    <xs:include schemaLocation="include/igsn-nameIdentifierScheme-v1.xsd"/>
+    <xs:include schemaLocation="include/igsn-identifierType-v1.xsd"/>
+    <xs:include schemaLocation="include/igsn-relatedIdentifierType-v1.xsd"/>
+    <xs:include schemaLocation="include/igsn-relationType-v1.xsd"/>
+    <xs:include schemaLocation="include/igsn-eventType-v1.xsd"/>
+    <xs:element name="sample">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- REQUIRED ELEMENTS -->
+                <xs:element name="sampleNumber">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="identifierType" use="required" type="igsn:identifierType"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="registrant">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="registrantName" minOccurs="1">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string"/>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="nameIdentifier" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="nameIdentifierScheme" use="required" type="igsn:nameIdentifier" />
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- OPTIONAL ELEMENTS -->
+                <xs:element name="relatedResourceIdentifiers" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="relatedIdentifier" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="relatedIdentifierType" type="igsn:relatedIdentifierType"/>
+                                            <xs:attribute name="relationType" type="igsn:relationType"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- ADMINISTRATIVE ELEMENTS -->
+                <xs:element name="log" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="logElement" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+											<xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                        	<xs:attribute name="event"  type="igsn:eventType" use="required"/>
+                                        	<xs:attribute name="timeStamp"  type="xs:dateTime" use="required"/>
+                                        	<xs:attribute name="comment"  type="xs:string"/>
+                                        </xs:extension>
+											</xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+             </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

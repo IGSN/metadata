@@ -1,0 +1,20 @@
+<sample xmlns="http://igsn.org/schema/kernel-v.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://igsn.org/schema/kernel-v.1.0 http://doidb.wdc-terra.org/igsn/schemas/igsn.org/schema/1.0/igsn.xsd">
+
+	<sampleNumber identifierType="igsn">10273/TEST/TESTHANDLE</sampleNumber>
+
+	<registrant>
+		<registrantName>John Doe</registrantName>
+ 		<nameIdentifier nameIdentifierScheme="orcid">Test</nameIdentifier>
+	</registrant>
+
+	<relatedResourceIdentifiers>
+		<relatedIdentifier relatedIdentifierType="doi" relationType="IsCitedBy">10.5072/TEST</relatedIdentifier>	
+		<relatedIdentifier relatedIdentifierType="handle" relationType="IsReferencedBy">10.5072/TEST2</relatedIdentifier>
+	</relatedResourceIdentifiers>
+
+	<log>
+		<logElement event="registered" timeStamp="2002-09-24T08:07:00" comment="This is an optional comment"/>
+		<logElement event="submitted" timeStamp="2002-09-24T08:07:00"/>
+	</log>
+
+</sample>
