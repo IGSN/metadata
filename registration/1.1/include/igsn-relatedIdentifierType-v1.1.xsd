@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://igsn.org/schema/kernel-v.1.1"
-    xmlns:igsn="http://igsn.org/schema/kernel-v.1.1">
+    targetNamespace="http://schema.igsn.org/registration/1.1"
+    xmlns:igsn="http://schema.igsn.org/registration/1.1">
     <xs:simpleType name="relatedIdentifierType">
         <xs:annotation>
             <xs:documentation>The type of related identifier.</xs:documentation>
