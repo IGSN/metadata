@@ -1,4 +1,4 @@
-<sample xmlns="http://igsn.org/schema/kernel-v.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://igsn.org/schema/kernel-v.1.1 http://doidb.wdc-terra.org/igsn/schemas/igsn.org/schema/1.1/igsn.xsd">
+<sample xmlns="http://schema.igsn.org/registration/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.igsn.org/registration/1.1 http://schema.igsn.org/registration/1.1/igsn.xsd">
 
 	<sampleNumber identifierType="igsn">10273/TEST/TESTHANDLE</sampleNumber>
 
@@ -8,8 +8,8 @@
 	</registrant>
 
 	<relatedResourceIdentifiers>
-		<relatedIdentifier relatedIdentifierType="doi" relationType="IsCitedBy">10.5072/TEST</relatedIdentifier>	
-		<relatedIdentifier relatedIdentifierType="handle" relationType="IsReferencedBy">10.5072/TEST2</relatedIdentifier>
+		<relatedResourceIdentifier relatedIdentifierType="doi" relationType="IsCitedBy">10.5072/TEST</relatedResourceIdentifier>	
+		<relatedResourceIdentifier relatedIdentifierType="handle" relationType="IsReferencedBy">10.5072/TEST2</relatedResourceIdentifier>
 	</relatedResourceIdentifiers>
 
 	<log>
