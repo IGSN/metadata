@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" xml:lang="EN" version="1.0">
+  <xs:simpleType name="featureType" id="featureType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/borehole/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/crossSection/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/CTD/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/depthInterval/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/excavation/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/fieldArea/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/flightline/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/interval/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/observationWell/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/profile/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/quadrat/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/scene/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/shipsTrack/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/site/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/soilPitSection/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/specimen/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/streamGage/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/trajectory/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/transect/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/traverse/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/waterQualityStation/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/samplingfeaturetype/weatherStation/"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

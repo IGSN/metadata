@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" xml:lang="EN" version="1.0">
+  <xs:simpleType name="methodType" id="MethodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Blast"/>
+      <xs:enumeration value="Corer"/>
+      <xs:enumeration value="Corer:Box"/>
+      <xs:enumeration value="Corer:Drill"/>
+      <xs:enumeration value="Corer:FreeFall"/>
+      <xs:enumeration value="Corer:Gravity"/>
+      <xs:enumeration value="Corer:Gravity,Giant"/>
+      <xs:enumeration value="Corer:Kastenlot"/>
+      <xs:enumeration value="Corer:Multi"/>
+      <xs:enumeration value="Corer:Piston"/>
+      <xs:enumeration value="Corer:Piston,Giant"/>
+      <xs:enumeration value="Corer:Rock"/>
+      <xs:enumeration value="Corer:SideSaddle"/>
+      <xs:enumeration value="Corer:TriggerWeight"/>
+      <xs:enumeration value="Corer:Vibrating"/>
+      <xs:enumeration value="Dredge"/>
+      <xs:enumeration value="Dredge:ChainBag"/>
+      <xs:enumeration value="Dredge:Scallop"/>
+      <xs:enumeration value="Grab"/>
+      <xs:enumeration value="Hand"/>
+      <xs:enumeration value="Hand:Auger"/>
+      <xs:enumeration value="Hand:Hammer"/>
+      <xs:enumeration value="Hand:Knife"/>
+      <xs:enumeration value="Net"/>
+      <xs:enumeration value="Net:MOCNESS"/>
+      <xs:enumeration value="Probe"/>
+      <xs:enumeration value="Scoop"/>
+      <xs:enumeration value="Trap"/>
+      <xs:enumeration value="Trawl"/>
+      <xs:enumeration value="Other"/>
+      <xs:enumeration value="Unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

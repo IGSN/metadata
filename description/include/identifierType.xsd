@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" xml:lang="EN" version="1.0">
+  <xs:simpleType name="identifierType" id="identifierType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ARK"/>
+      <xs:enumeration value="DOI"/>
+      <xs:enumeration value="Handle"/>
+      <xs:enumeration value="IGSN"/>
+      <xs:enumeration value="ISBN"/>
+      <xs:enumeration value="ISNI"/>
+      <xs:enumeration value="ISSN"/>
+      <xs:enumeration value="LSID"/>
+      <xs:enumeration value="ORCID"/>
+      <xs:enumeration value="PURL"/>
+      <xs:enumeration value="URL"/>
+      <xs:enumeration value="URN"/>
+      <xs:enumeration value="VIAF"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
