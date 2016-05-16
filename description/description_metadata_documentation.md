@@ -17,8 +17,8 @@ ID  | Element  | A/C  | Occ  | Definition  | Description and instructions
 3.1.1 | identifierType|A|
 4 | parentIdentifier| |
 4.1 | identifierType| A|
-~~5 | CollectionIdentifier| | |the IGSN of a set of related resources to which this resource belongs |~~
-5.1 | identifierType| A|
+~~5~~ | ~~CollectionIdentifier~~| | |~~the IGSN of a set of related resources to which this resource belongs~~ |
+~~5.1~~ | ~~identifierType~~| ~~A~~|
 6 | relatedIdentifiers| |
 6.1 | relatedIdentifier|C | 0...n|Link to parent sample, paper, other resource. 
 6.1.1 | identifierType| A|
