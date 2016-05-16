@@ -9,67 +9,67 @@ The descriptive metadata schema captures basic characteristics of physical sampl
 ID  | Element  | A/C  | Occ  | Definition  | Description and instructions
 --- | -------- | ---- | ---- | ----------- | ----------------------------
   | resource| Root element | |  | | IGSN "birth certificate" for a physical sample, associated feature, or collection |
-1 | identifier|C | 1  |  The  Identifier is a unique string that identifies a resource. | IGSN (International GeoSample Number) registered by an IGSN member. Format should be: "10273/foo"|
-1.1 | identifierType|A | type of identifier used | currently only type=IGSN is supported |
-2 | name| |  1...1, not nillable| Text string for people to understand what is identified. What would typically be presented in a user interface. Free Text. | collector or contributor's local/field name used to name the specimen; not globally unique but typically unique within a submitted set. |
-3 | alternateIdentifiers| |
-3.1 | alternateIdentifiers| C | 0...n | Other formal identifiers for this resource, in addition to the IGSN. |
-3.1.1 | identifierType| A |
-4 | parentIdentifier| |
-4.1 | identifierType| A |
-~~5~~ | ~~CollectionIdentifier~~| | |~~the IGSN of a set of related resources to which this resource belongs~~ |
+1 | identifier| C | 1  |  The  Identifier is a unique string that identifies a resource. | IGSN (International GeoSample Number) registered by an IGSN member. Format should be: "10273/foo"|
+1.1 | identifierType| A | include/identifierType.xsd | currently only type=IGSN is supported |
+2 | name| |  1...1, not nillable|  Free Text. | Text string for people to understand what is identified. What would typically be presented in a user interface. Collector's or contributor's local/field name used to name the specimen; not globally unique but typically unique within a set of specimens. |
+3 | alternateIdentifiers |  |  0...1 | | Other formal identifiers for this resource, in addition to the IGSN. |
+3.1 | alternateIdentifier | C | 0...n |  |
+3.1.1 | identifierType| A |  | include/identifierType.xsd  | Controlled list of identifiers in include/identifierType.xsd |
+~~4~~ | ~~parentIdentifier~~ | |  | Obsolete because parent-child relationships between samples are defined in relatedIdentifiers. |
+~~4.1~~ | ~~identifierType~~ | ~~A~~ |
+~~5~~ | ~~CollectionIdentifier~~| | |~~the IGSN of a set of related resources to which this resource belongs~~ Obsolete because the relationship between a sample and a collection of samples is defined in relatedIdentifiers. |
 ~~5.1~~ | ~~identifierType~~| ~~A~~|
-6 | relatedIdentifiers| |
-6.1 | relatedIdentifier|C | 0...n|Link to parent sample, paper, other resource. 
-6.1.1 | identifierType| A|
-6.1.2 | relationType| A|
-7 | description|0...1 | |Free text, anything else that might be useful to know about the sample at its 'birth'
-8 | registrant| |
-8.1 | identifier| C|
-8.1.1 | identifierType| A|
-8.2 | name| C|
-8.3 | affiliation|C|
-8.3.1 | identifier| C|
-8.3.1.1 | identifierType| A|
-8.3.2 | name| C|
-9 | collector| | 1...n, nillable|Who collected the sample. Must be nillable. Ideally want an URI for agent; also need name string. Role: Person who gets credit for picking location, getting funding, selecting and extracting the actual object. (1..N, nilable). ODP chief scientist, field geologist. Synthetic sample--experimentalist is collector. 
-9.1 | identifier| C|
-9.1.1 | identifierType| A|
-9.2 | name| C|
-9.3 | affiliation|C|
-9.3.1 | identifier| C|
-9.3.1.1 | identifierType| A|
-9.3.2 | name| C|
-10 |contributors | |
-10.1 |contributor | C|
-10.1.1 | contributorType|A |
-10.1.1 | identifier| C|
-10.1.1.1 | identifierType| A|
-10.1.1.2 | name| C|
-11 | geoLocations| |  1...1, nillable[reason]| Where was the sample acquired relative to the Earth (or another celestial body...). Some samples might  be ‘non-geographic’: mineral specimen, synthetic material.
-11.1 |geoLocation | |
-11.1.1 | geometry| |
-11.1.1.1 | geometryType|A |
-11.1.1.2 | sridType| A|
-11.1.2 | toponym| |
-11.1.2.1 | identifier| C|
-11.1.2.1.1 | identifierType| A|
-11.1.2.2 | name| c|
-12 | resourceTypes| |1...n, not nillable|Describe the basic form of the object that is registered. e.g. polished section; core; pulp; solution, dredge haul in a box, lot, piece of material. Different profiles might have different vocabularies. (1..N, not nillable). Implementation should be a ‘scoped’ name (vocabulary URI, concept/term URI, label for display).
-12.1 | resourceType|C |
-12.2 | alternateResourceTypes| C|
-12.2.1 | alternateResourceType|C |
-13 | materials| |1...n, nillable|Categorize the material that composes to the sample, e.g. water, granite, tissue. Idea is to create a high-level cross-domain vocabulary. (1..N, nillable). ‘lot’ type samples (dredge haul, drill core) may have multiple materials included. Material may be categorized under different schemes. Implementation should be a ‘scoped’ name (vocabulary URI, concept/term URI, label for display). 
-13.1 | material|C |
-13.2 | alternateMaterials| C|
-13.2.1 | alternateMaterial| C|
-14 | collectionMethods| |1...1, nillable|term to categorize the process through which the sample was acquired as an independent object.
-14.1 | collectionMethod|C |
-14.2 | alternatecollectionMethods| C|
-14.2.1 | alternatecollectionMethod|C |
-15 | collectionTime| |  1...1, nillable[reason]|When was the sample collected. instant or interval. have to determine encoding scheme for interchange, eg.(ISO 19156) (1...1, nillable[reason]). (need specifiction of sample dateTime encoding). YYYY, YYYY-MM, YYYY-MM-DD, YYYY-MM-DDZhh:mm
-16 | sampleAccess| |  | indicates whether this resource is available for reuse beyond the original contributor | typically only used for samples | 
-17 | supplementalMetadata| |0...n, nillable|	Location (URI) of a supplemental metadata records. These records may be more detailed or in other formats and are provided by the repository. This element was introduced to the high-level descriptive metadata kernel to point to richer and more detailed descriptions without bloating the kernel with many optional elements that mostly go unused.
-17.1 | record| C | 0...n | URI |  |
+6 | relatedIdentifiers|  | 0...1 |  | Formal identifiers of resources related to this resource, including the scheme and relationType for each. Link to parent sample, paper, other resource; here we link to a field expedition, journal article, etc. |
+6.1 | relatedIdentifier|C | 0...n|  |  |
+6.1.1 | identifierType| A | 1 |
+6.1.2 | relationType| A| 1 | include/relationType.xsd | Controlled list of relation types in include/relationType.xsd |
+7 | description| 0...1 | | Descriptive text about the sample. | Free text, anything else that might be useful to know about the sample at its 'birth' |
+8 | registrant|  | 1 | agent that registered the IGSN for this resource  | registrant (cf. datacite:publisher) - agent (person or organization) that registered the IGSN for this resource |
+8.1 | identifier| C | 0...1 | Identification of the registrant |  |
+8.1.1 | identifierType| A | 1 | include/identifierType.xsd | Controlled list of identifiers in include/identifierType.xsd |
+8.2 | name| C | 0...1 | string | Name of the registrant. |
+8.3 | affiliation| C | 0...1  |  | Information about the affiliation of the registrant. |
+8.3.1 | identifier| C | 0...1 | Identification of the institutional affiliation of the registrant. |  |
+8.3.1.1 | identifierType| A | 1 | include/identifierType.xsd | Controlled list of identifiers in include/identifierType.xsd |
+8.3.2 | name| C | 0...1 | string | Name of the institution to which the registrant is affiliated |
+9 | collector| | 1...n, nillable | Collector of the resource | Who collected the sample. Must be nillable. Ideally want an URI for agent; also need name string. Role: Person who gets credit for picking location, getting funding, selecting and extracting the actual object. (1..N, nilable). ODP chief scientist, field geologist. Synthetic sample--experimentalist is collector. 
+9.1 | identifier| C | 0...1 |  | Identification of the sample collector. |
+9.1.1 | identifierType| A |  1 | include/identifierType.xsd | Controlled list of identifiers in include/identifierType.xsd |
+9.2 | name| C | 1 | string | Name of the sample collector. |
+9.3 | affiliation| C | 0...1 | string | Name of the institution to which the collector is affiliated |
+9.3.1 | identifier| C | 0...1 | Identification of the institutional affiliation of the collector. |  |
+9.3.1.1 | identifierType| A| 1 |  | Controlled list of identifiers in include/identifierType.xsd |
+9.3.2 | name| C | 1 | string | Name of the institution to which the collector is affiliated |
+10 | contributors |  | 0...1 |  | Agents (persons or organizations) that contributed to this resource; investigator, funder, technician, etc. |
+10.1 |contributor | C | 1...n |  |  |
+10.1.1 | contributorType| A | 1 | include/contributorType.xsd | Controlled list of identifiers in include/contributorType.xsd |
+10.1.1 | identifier| C | 0...1 |  | Identification of the contributor |
+10.1.1.1 | identifierType| A | 1 | include/identifierType.xsd | Controlled list of identifiers in include/identifierType.xsd |
+10.1.1.2 | name| C | 0...1 |  | Name of the contributor |
+11 | geoLocations|  |  0...1 |  | geoLocations (geometry cf. odm2:samplingfeaturegeotype|toponym) - location of the resource, expressed as 2-D geometry and/or place name(s)|
+11.1 |geoLocation | C | 1...1 |  | Where was the sample acquired relative to the Earth (or another celestial body...). Some samples might  be 'non-geographic': mineral specimen, synthetic material.
+11.1.1 | geometry|  | 1 |  | Geospatial geometry element. |
+11.1.1.1 | geometryType| A |  1 | include/geometryType.xsd | Controlled list of identifiers in include/geometryType.xsd |
+11.1.1.2 | sridType| A | 0...1 | include/sridType.xsd | Controlled list of identifiers in include/sridType.xsd |
+11.1.2 | toponym|  | 1 |   | Named location
+11.1.2.1 | identifier| C | 0...1 |  | Identification of the geographical location. |
+11.1.2.1.1 | identifierType| A | 1 | include/identifierType.xsd | Controlled list of identifiers in include/identifierType.xsd |
+11.1.2.2 | name| C | 0...1 | string | Name of the location. |
+12 | resourceTypes|  | 0...1 |  | Describe the basic form of the object that is registered. e.g. polished section; core; pulp; solution, dredge haul in a box, lot, piece of material. Different profiles might have different vocabularies. (1..N, not nillable). Implementation should be a 'scoped' name (vocabulary URI, concept/term URI, label for display). |
+12.1 | resourceType | C | 1 | include/resourceType.xsd |  |
+12.2 | alternateResourceTypes| C | 0...1 |   |   |
+12.2.1 | alternateResourceType| C | 0...n |  include/resourceType.xsd |   |
+13 | materials| | 0...1 |  | Categorize the material that composes to the sample, e.g. water, granite, tissue. Idea is to create a high-level cross-domain vocabulary. (1..N, nillable). 'lot' type samples (dredge haul, drill core) may have multiple materials included. Material may be categorized under different schemes. Implementation should be a 'scoped' name (vocabulary URI, concept/term URI, label for display). 
+13.1 | material| C | 1...n | include/materialType.xsd |  |
+13.2 | alternateMaterials| C | 0...1 |   |   |
+13.2.1 | alternateMaterial| C | 1...n | string or URI |  |
+14 | collectionMethods|  | 0...1 |1...1, nillable | term to categorize the process through which the sample was acquired as an independent object.
+14.1 | collectionMethod| C | 1 | include/methodType | broad classification of instrument/technique used to create or extract this resource - must provide 1 term from SESAR (collectionMethod) vocabulary plus 0-N additional terms from any vocabulary; typically only used for samples |
+14.2 | alternatecollectionMethods | C | 0...1 |  |  |
+14.2.1 | alternatecollectionMethod | C | 0...1 | string or URI |   |
+15 | collectionTime| |  1...1, nillable[reason] | When was the sample collected. instant or interval. have to determine encoding scheme for interchange, eg.(ISO 19156) (1...1, nillable[reason]). (need specifiction of sample dateTime encoding). YYYY, YYYY-MM, YYYY-MM-DD, YYYY-MM-DDZhh:mm
+16 | sampleAccess |  |  | indicates whether this resource is available for reuse beyond the original contributor | typically only used for samples | 
+17 | supplementalMetadata |  | 0...1 |	| Location (URI) of a supplemental metadata records. These records may be more detailed or in other formats and are provided by the repository. This element was introduced to the high-level descriptive metadata kernel to point to richer and more detailed descriptions without bloating the kernel with many optional elements that mostly go unused.
+17.1 | record| C | 1...n | URI | Any URI pointing to supplemental metadata of the resource |
 
 A = Attribute, C = Child
