@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" xml:lang="EN" version="1.0">
+  <xs:simpleType name="contributorType" id="contributorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ContactPerson"/>
+      <xs:enumeration value="Distributor"/>
+      <xs:enumeration value="Editor"/>
+      <xs:enumeration value="Funder"/>
+      <xs:enumeration value="HostingInstitution"/>
+      <xs:enumeration value="Other"/>
+      <xs:enumeration value="ProjectLeader"/>
+      <xs:enumeration value="ProjectManager"/>
+      <xs:enumeration value="ProjectMember"/>
+      <xs:enumeration value="RelatedPerson"/>
+      <xs:enumeration value="ResearchGroup"/>
+      <xs:enumeration value="RightsHolder"/>
+      <xs:enumeration value="Researcher"/>
+      <xs:enumeration value="Sponsor"/>
+      <xs:enumeration value="Supervisor"/>
+      <xs:enumeration value="WorkPackageLeader"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
