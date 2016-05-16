@@ -8,22 +8,22 @@ The descriptive metadata schema captures basic characteristics of physical sampl
 
 ID  | Element  | A/C  | Occ  | Definition  | Description and instructions
 --- | -------- | ---- | ---- | ----------- | ----------------------------
-  | resource| Root element | 1  |  The Identifier is a unique string that identifies a resource. |IGSN (International GeoSample Number) registered by an IGSN member. Format should be: "10273/foo"|
-1 | identifier|C |
-1.1 | identifierType|A |
-2 | name| |  1...1, not nillable|Text string for people to understand what is identified. What would typically be presented in a user interface. Free Text. | 
+  | resource| Root element | |  | | IGSN "birth certificate" for a physical sample, associated feature, or collection |
+1 | identifier|C | 1  |  The  Identifier is a unique string that identifies a resource. | IGSN (International GeoSample Number) registered by an IGSN member. Format should be: "10273/foo"|
+1.1 | identifierType|A | type of identifier used | currently only type=IGSN is supported |
+2 | name| |  1...1, not nillable| Text string for people to understand what is identified. What would typically be presented in a user interface. Free Text. | collector or contributor's local/field name used to name the specimen; not globally unique but typically unique within a submitted set. |
 3 | alternateIdentifiers| |
-3.1 | alternateIdentifiers|C|
-3.1.1 | identifierType|A|
+3.1 | alternateIdentifiers| C | 0...n | Other formal identifiers for this resource, in addition to the IGSN. |
+3.1.1 | identifierType| A |
 4 | parentIdentifier| |
-4.1 | identifierType| A|
+4.1 | identifierType| A |
 ~~5~~ | ~~CollectionIdentifier~~| | |~~the IGSN of a set of related resources to which this resource belongs~~ |
 ~~5.1~~ | ~~identifierType~~| ~~A~~|
 6 | relatedIdentifiers| |
 6.1 | relatedIdentifier|C | 0...n|Link to parent sample, paper, other resource. 
 6.1.1 | identifierType| A|
 6.1.2 | relationType| A|
-7 | description|0...1 ||Free text, anything else that might be useful to know about the sample at its 'birth'
+7 | description|0...1 | |Free text, anything else that might be useful to know about the sample at its 'birth'
 8 | registrant| |
 8.1 | identifier| C|
 8.1.1 | identifierType| A|
@@ -68,8 +68,8 @@ ID  | Element  | A/C  | Occ  | Definition  | Description and instructions
 14.2 | alternatecollectionMethods| C|
 14.2.1 | alternatecollectionMethod|C |
 15 | collectionTime| |  1...1, nillable[reason]|When was the sample collected. instant or interval. have to determine encoding scheme for interchange, eg.(ISO 19156) (1...1, nillable[reason]). (need specifiction of sample dateTime encoding). YYYY, YYYY-MM, YYYY-MM-DD, YYYY-MM-DDZhh:mm
-16 | sampleAccess| |
-17 | supplementalMetadata| |0...n, nillable|	Location (URL) of a supplemental metadata records. These records may be more detailed or in other formats and are provided by the repository. This element was introduced to the high-level descriptive metadata kernel to point to richer and more detailed descriptions without bloating the kernel with many optional elements that mostly go unused.
-17.1 | record|C |
+16 | sampleAccess| |  | indicates whether this resource is available for reuse beyond the original contributor | typically only used for samples | 
+17 | supplementalMetadata| |0...n, nillable|	Location (URI) of a supplemental metadata records. These records may be more detailed or in other formats and are provided by the repository. This element was introduced to the high-level descriptive metadata kernel to point to richer and more detailed descriptions without bloating the kernel with many optional elements that mostly go unused.
+17.1 | record| C | 0...n | URI |  |
 
 A = Attribute, C = Child
