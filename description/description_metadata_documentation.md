@@ -8,16 +8,16 @@ The descriptive metadata schema captures basic characteristics of physical sampl
 
 ID    | Element        | A/C | Occ    | Definition  | Description and instructions
 ----- | -------------- | --- | ---    | ----------- | ----------------------------
-      | resource       | Root element |  |       | IGSN "birth certificate" for a physical sample, associated feature, or collection |
+      | resource       | Root element |    |       | IGSN "birth certificate" for a physical sample, associated feature, or collection |
 1     | identifier     | C   | 1      | string | The  Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number) registered by an IGSN member. Format should be: "10273/foo" |
-1.1   | identifierType | A   | include/identifierType.xsd | currently only type=IGSN is supported |
+1.1   | identifierType | A   | 1      |include/identifierType.xsd | currently only type=IGSN is supported |
 2     | name           |     |  1...1, not nillable| string | Text string for people to understand what is identified. What would typically be presented in a user interface. Collector's or contributor's local/field name used to name the specimen; not globally unique but typically unique within a set of specimens. |
 3     | alternateIdentifiers |  | 0...1 |  | Other formal identifiers for this resource, in addition to the IGSN. |
 3.1   | alternateIdentifier | C | 0...n | string |   |
 3.1.1 | identifierType | A | 0...1 | include/identifierType.xsd  | Controlled list of identifiers in include/identifierType.xsd |
-~~4~~ | ~~parentIdentifier~~ | |  | Obsolete because parent-child relationships between samples are defined in relatedIdentifiers. |
+~~4~~ | ~~parentIdentifier~~ | |  |  | Obsolete because parent-child relationships between samples are defined in relatedIdentifiers. |
 ~~4.1~~ | ~~identifierType~~ | ~~A~~ |
-~~5~~ | ~~CollectionIdentifier~~| | |~~the IGSN of a set of related resources to which this resource belongs~~ Obsolete because the relationship between a sample and a collection of samples is defined in relatedIdentifiers. |
+~~5~~ | ~~CollectionIdentifier~~|  |  |  | ~~the IGSN of a set of related resources to which this resource belongs~~ Obsolete because the relationship between a sample and a collection of samples is defined in relatedIdentifiers. |
 ~~5.1~~ | ~~identifierType~~| ~~A~~|
 6     | relatedIdentifiers |  | 0...1 |  | Formal identifiers of resources related to this resource, including the scheme and relationType for each. Link to parent sample, paper, other resource; here we link to a field expedition, journal article, etc. |
 6.1   | relatedIdentifier| C | 0...n | string |  |
@@ -67,8 +67,8 @@ ID    | Element        | A/C | Occ    | Definition  | Description and instructio
 14.1   | collectionMethod | C | 1 | include/methodType | 1...1, nillable, broad classification of instrument/technique used to create or extract this resource - must provide 1 term from SESAR (collectionMethod) vocabulary plus 0-N additional terms from any vocabulary; typically only used for samples |
 14.2   | alternatecollectionMethods | C | 0...1 |  | Alternate description of the collection method in addition to controlled vocabulary |
 14.2.1 | alternatecollectionMethod | C | 0...1 | string or URI |   |
-15     | collectionTime |  | 1...1 | Time when  the sample was collected. 1...1, nillable[reason]. May be instant or interval. Has to determine encoding scheme for interchange, e.g. (ISO 19156). Example encodings: YYYY, YYYY-MM, YYYY-MM-DD, YYYY-MM-DDZhh:mm
-16     | sampleAccess  |   | accessible, restricted, private  | Indicates whether this resource is available for reuse beyond the original contributor. Typically only used for samples, not sampling features. | 
+15     | collectionTime |  | 1...1 | Datetime | Time when  the sample was collected. 1...1, nillable[reason]. May be instant or interval. Has to determine encoding scheme for interchange, e.g. (ISO 19156). Example encodings: YYYY, YYYY-MM, YYYY-MM-DD, YYYY-MM-DDZhh:mm
+16     | sampleAccess  |   | 1...1 | accessible, restricted, private  | Indicates whether this resource is available for reuse beyond the original contributor. Typically only used for samples, not sampling features. | 
 17     | supplementalMetadata |   | 0...1 |	 | Location (URI) of a supplemental metadata records. These records may be more detailed or in other formats and are provided by the repository. This element was introduced to the high-level descriptive metadata kernel to point to richer and more detailed descriptions without bloating the kernel with many optional elements that mostly go unused.
 17.1   | record        | C | 1...n | URI | Any URI pointing to supplemental metadata of the resource |
 
