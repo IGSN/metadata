@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" version="1.0" xml:lang="EN">
+	<xs:simpleType name="resourceType" id="resourceType">
+		<xs:restriction base="xs:anyURI">
+			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/PhysicalSample"/>
+				<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/SampleCollection"/>
+				<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/SamplingFeature"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
