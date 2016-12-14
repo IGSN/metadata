@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2012 rel. 2 (x64) (http://www.altova.com) by Terry Rankine (CSIRO) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" version="1.0" xml:lang="EN">
 	<xs:include schemaLocation="include/accessType.xsd"/>
-	<xs:include schemaLocation="include/collectionType.xsd"/>
+	<xs:include schemaLocation="include/registrationType.xsd"/>
 	<xs:include schemaLocation="include/contributorType.xsd"/>
 	<xs:include schemaLocation="include/featureType.xsd"/>
 	<xs:include schemaLocation="include/geometryType.xsd"/>
@@ -11,8 +11,8 @@
 	<xs:include schemaLocation="include/methodType.xsd"/>
 	<xs:include schemaLocation="include/relationType.xsd"/>
 	<xs:include schemaLocation="include/registrationType.xsd"/>
-	<xs:include schemaLocation="include/sampleType.xsd"/>
 	<xs:include schemaLocation="include/sridType.xsd"/>
+	<xs:include schemaLocation="include/resourceType.xsd"/>
 	<xs:annotation>
 		<xs:documentation>
 	International Geo Sample Number (IGSN) Metadata Kernel
@@ -71,13 +71,13 @@
 				<!-- alternateIdentifiers -->
 				<!-- parentIdentifier -->
 				<!-- collectionIdentifier -->
-				<xs:element name="relatedIdentifiers" minOccurs="0" maxOccurs="1">
+				<xs:element name="relatedResourceIdentifiers" minOccurs="0" maxOccurs="1">
 					<xs:annotation>
 						<xs:documentation>(6.) relatedIdentifiers - formal identifiers of resources related to this resource, including the scheme and relationtype for each; here we link to a field expedition, journal article, etc.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="relatedIdentifier" minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="relatedResourceIdentifier" minOccurs="1" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
@@ -149,11 +149,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="resourceType">
-								<xs:simpleType>
-									<xs:union memberTypes="featureType sampleType collectionType"/>
-								</xs:simpleType>
-							</xs:element>
+							<xs:element name="resourceType" type="resourceType"/>
 							<!-- resourceTypes.resourceType -->
 							<xs:element name="alternateResourceTypes" minOccurs="0">
 								<xs:complexType>
@@ -199,45 +195,39 @@
 						<xs:documentation>(11.) geoLocations (geometry cf. odm2:samplingfeaturegeotype|toponym) - location of the resource, expressed as 2-D geometry and/or place name(s)</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="location" maxOccurs="unbounded">
+						<xs:all>
+							<xs:element name="geometry" minOccurs="0">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="type" type="geometryType" use="required"/>
+											<xs:attribute name="sridType" type="sridType" use="optional"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<!-- geometry -->
+							<xs:element name="toponym" minOccurs="0">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="geometry">
+										<xs:element name="identifier" minOccurs="0">
 											<xs:complexType>
 												<xs:simpleContent>
 													<xs:extension base="xs:string">
-														<xs:attribute name="type" type="geometryType" use="required"/>
-														<xs:attribute name="sridType" type="sridType" use="optional"/>
+														<xs:attribute name="type" type="identifierType" use="required"/>
 													</xs:extension>
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<!-- geometry -->
-										<xs:element name="toponym">
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="identifier" minOccurs="0">
-														<xs:complexType>
-															<xs:simpleContent>
-																<xs:extension base="xs:string">
-																	<xs:attribute name="type" type="identifierType" use="required"/>
-																</xs:extension>
-															</xs:simpleContent>
-														</xs:complexType>
-													</xs:element>
-													<!-- toponym.identifier -->
-													<xs:element name="name" type="xs:string" minOccurs="0"/>
-													<!-- toponym.name -->
-												</xs:sequence>
-											</xs:complexType>
-										</xs:element>
-										<!-- toponym -->
+										<!-- toponym.identifier -->
+										<xs:element name="name" type="xs:string" minOccurs="0"/>
+										<!-- toponym.name -->
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
+							<!-- toponym -->
 							<!-- geoLocation -->
-						</xs:sequence>
+						</xs:all>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="date">
@@ -366,7 +356,7 @@
 				<!-- materials -->
 				<!-- collectionMethod -->
 				<!-- collectionTime -->
-				<xs:element name="sampleAccess" type="accessType" minOccurs="1" maxOccurs="1">
+				<xs:element name="isMetadataPublic" type="accessType" minOccurs="1" maxOccurs="1">
 					<xs:annotation>
 						<xs:documentation>(16.) sampleAccess - indicates whether this resource is available for reuse beyond the original contributor; typically only used for samples</xs:documentation>
 					</xs:annotation>
@@ -378,13 +368,22 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="record" type="xs:anyURI" minOccurs="1" maxOccurs="unbounded"/>
+							<xs:element name="metadata" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="metadataURI" type="xs:anyURI"/>
+										<!-- collectionMethods.alternateCollectionMethods.alternateCollectionMethod -->
+										<xs:element name="metadataTitle" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<!-- collectionMethods.alternateCollectionMethods.alternateCollectionMethod -->
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<!-- supplementalMetadata -->
 			</xs:sequence>
-			<xs:attribute name="registrationType" type="resourceType" use="required"/>
+			<xs:attribute name="registedObjectType" type="registrationType" use="required"/>
 		</xs:complexType>
 	</xs:element>
 	<!-- resource -->

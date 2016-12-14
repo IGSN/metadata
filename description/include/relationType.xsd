@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" version="1.0" xml:lang="EN">
 	<xs:simpleType name="relationType" id="relationType">
-		<xs:restriction base="xs:anyURI">
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/IsDerivedFrom"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/IsSourceOf"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/IsCompiledBy"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/Compiles"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/HasReferenceResource"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/IsIdenticalTo"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/IsDocumentedBy"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/Participates"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/IsDigitalRepresentationOf"/>
-			<xs:enumeration value="http://pid.geoscience.gov.au/def/voc/igsn-codelists/SamplingFeature"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IsDerivedFrom"/>
+			<xs:enumeration value="IsSourceOf"/>
+			<xs:enumeration value="HasSamplingFeature"/>
+			<xs:enumeration value="IsDocumentedBy"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
