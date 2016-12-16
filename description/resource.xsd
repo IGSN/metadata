@@ -71,13 +71,13 @@
 				<!-- alternateIdentifiers -->
 				<!-- parentIdentifier -->
 				<!-- collectionIdentifier -->
-				<xs:element name="relatedResourceIdentifiers" minOccurs="0" maxOccurs="1">
+				<xs:element name="relatedResources" minOccurs="0" maxOccurs="1">
 					<xs:annotation>
 						<xs:documentation>(6.) relatedIdentifiers - formal identifiers of resources related to this resource, including the scheme and relationtype for each; here we link to a field expedition, journal article, etc.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="relatedResourceIdentifier" minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="relatedResource" minOccurs="1" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
