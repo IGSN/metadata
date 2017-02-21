@@ -12,8 +12,7 @@
 			<xs:enumeration value="LSID"/>
 			<xs:enumeration value="ORCID"/>
 			<xs:enumeration value="PURL"/>
-			<xs:enumeration value="URL"/>
-			<xs:enumeration value="URN"/>
+			<xs:enumeration value="URI"/>
 			<xs:enumeration value="VIAF"/>
 			<xs:enumeration value="arXiv"/>
 			<xs:enumeration value="bibcode"/>
