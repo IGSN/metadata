@@ -230,7 +230,7 @@
 						</xs:all>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="date">
+				<xs:element name="date" minOccurs="0">
 					<xs:complexType>
 						<xs:choice>
 							<xs:element name="timeInstant" type="xs:dateTime" minOccurs="0"/>
