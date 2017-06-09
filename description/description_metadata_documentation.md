@@ -1,15 +1,8 @@
-# IGSN Description Metadata #
 
-IGSN Description Metadata is intended to describe the core elements of a specimen. The set of attributes is seen as the "birth certificate" of a specimens and should not contain stateful attributes, where possible. The base document for the development are the notes from the [IGSN Matadata Kernel Workshop](http://igsn.github.io/2015/09/15/IGSN-Metadata-Kernel-Working-Meeting/) held in Los Angeles in September 2015.
-
-# IGSN Descriptive Metadata Elements #
-
-The descriptive metadata schema captures basic characteristics of physical samples and collections.
-
-ID    | Element        | A/C | Occ    | Definition  | Description and instructions
------ | -------------- | --- | ---    | ----------- | ----------------------------
-      | resource       | Root element |    |       | IGSN "birth certificate" for a physical sample, associated feature, or collection |
-1     | identifier     | C   | 1      | string | The  Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number) registered by an IGSN member. Format should be: "10273/foo" |
+ID    | Element        | A/C          | Occ    | Definition  | Description and instructions
+----- | -------------- | ------------ | ------ | ----------- | ----------------------------
+&nbsp;| resource       | Root element |        |             | IGSN "birth certificate" for a physical sample, associated feature, or collection 
+1     | identifier     | C            | 1      | string      | The  Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number) registered by an IGSN member. Format should be: "10273/foo" 
 1.1   | identifierType | A   | 1      |include/identifierType.xsd | currently only type=IGSN is supported |
 2     | name           |     |  1...1, not nillable| string | Text string for people to understand what is identified. What would typically be presented in a user interface. Collector's or contributor's local/field name used to name the specimen; not globally unique but typically unique within a set of specimens. |
 3     | alternateIdentifiers |  | 0...1 |  | Other formal identifiers for this resource, in addition to the IGSN. |
