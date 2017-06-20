@@ -2,21 +2,7 @@ IGSN Description Metadata is intended to describe the core elements of a specime
 
 # IGSN Descriptive Metadata Elements #
 
-The descriptive metadata schema captures basic characteristics of physical samples and collections.
 
-ID  | Element  | A/C  | Occ  | Definition  | Description and instructions
---- | -------- | ---- | ---- | ----------- | ----------------------------
-  | resource| Root element | 1  |  The Identifier is a unique string that identifies a resource. |IGSN (International GeoSample Number) registered by an IGSN member. Format should be: "10273/foo"|
-1 | identifier|C |
-1.1 | identifierType|A |
-2 | name| |  1...1, not nillable|Text string for people to understand what is identified. What would typically be presented in a user interface. Free Text. | 
-3 | alternateIdentifiers| |
-3.1 | alternateIdentifiers|C|
-3.1.1 | identifierType|A|
-4 | parentIdentifier| |
-4.1 | identifierType| A|
-~~5~~ | ~~CollectionIdentifier~~| | |~~the IGSN of a set of related resources to which this resource belongs~~ |
-=======
 ID    | Element        | A/C          | Occ    | Definition  | Description and instructions
 ----- | -------------- | ------------ | ------ | ----------- | ----------------------------
 &nbsp;| resource       | Root element |        |             | IGSN "birth certificate" for a physical sample, associated feature, or collection 
