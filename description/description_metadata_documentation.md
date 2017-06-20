@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 IGSN Description Metadata is intended to describe the core elements of a specimen. The set of attributes is seen as the "birth certificate" of a specimens and should not contain stateful attributes, where possible. The base document for the development are the notes from the [IGSN Metadata Kernel Workshop](http://igsn.github.io/2015/09/15/IGSN-Metadata-Kernel-Working-Meeting/) held in Los Angeles in September 2015.
 
 # IGSN Descriptive Metadata Elements #
