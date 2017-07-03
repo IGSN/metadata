@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2012 rel. 2 (x64) (http://www.altova.com) by Terry Rankine (CSIRO) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" version="1.0" xml:lang="EN">
 	<xs:include schemaLocation="include/accessType.xsd"/>
 	<xs:include schemaLocation="include/registrationType.xsd"/>
@@ -17,10 +16,10 @@
 		<xs:documentation>
 	International Geo Sample Number (IGSN) Metadata Kernel
 	Description Schema
-	Version 1.0
-        November 15, 2015
+	Version 1.1
+        03 July 2017
 	W3C XML Schema validated by oXygen XML Editor v17.1
-	(c)2011-2016, IGSN e.V.
+	(CC-BY)2011-2017, IGSN e.V.
         info@igsn.org
     </xs:documentation>
 	</xs:annotation>
