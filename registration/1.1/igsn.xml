@@ -1,6 +1,6 @@
 <sample xmlns="http://schema.igsn.org/registration/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.igsn.org/registration/1.1 http://schema.igsn.org/registration/1.1/igsn.xsd">
 
-	<sampleNumber identifierType="igsn">10273/TEST/TESTHANDLE</sampleNumber>
+	<sampleNumber identifierType="igsn">20.500.11812/TESTIGSN</sampleNumber>
 
 	<registrant>
 		<registrantName>John Doe</registrantName>

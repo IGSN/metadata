@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" xml:lang="EN" version="1.0">
+  <xs:simpleType name="sampleType" id="sampleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/automated/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/core/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/coreHalfRound/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/corePiece/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/coreQuarterRound/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/coreSection/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/coreSectionHalf/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/coreSub-Piece/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/coreWholeRound/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/cuttings/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/dredge/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/foliageDigestion/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/foliageLeaching/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/forestFloorDigestion/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/grab/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/individualSample/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/litterFallDigestion/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/orientedCore/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/petriDishDryDeposition/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/precipitationBulk/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/rockPowder/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/standardReferenceSpecimen/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/terrestrialSection/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/thinSection/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/other/"/>
+      <xs:enumeration value="http://vocabulary.odm2.org/specimentype/unknown/"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
