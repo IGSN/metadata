@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" xml:lang="EN" version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.1" targetNamespace="http://schema.igsn.org/description/1.1" elementFormDefault="qualified" version="1.1" xml:lang="EN">
+	<xs:include schemaLocation="include/accessType.xsd"/>
+	<xs:include schemaLocation="include/registrationType.xsd"/>
+	<xs:include schemaLocation="include/contributorType.xsd"/>
+	<xs:include schemaLocation="include/featureType.xsd"/>
+	<xs:include schemaLocation="include/geometryType.xsd"/>
+	<xs:include schemaLocation="include/identifierType.xsd"/>
+	<xs:include schemaLocation="include/materialType.xsd"/>
+	<xs:include schemaLocation="include/methodType.xsd"/>
+	<xs:include schemaLocation="include/relationType.xsd"/>
+	<xs:include schemaLocation="include/registrationType.xsd"/>
+	<xs:include schemaLocation="include/sridType.xsd"/>
+	<xs:include schemaLocation="include/resourceType.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
 
-  <xs:include schemaLocation="include/accessType.xsd"/>
-  <xs:include schemaLocation="include/collectionType.xsd"/>
-  <xs:include schemaLocation="include/contributorType.xsd"/>
-  <xs:include schemaLocation="include/featureType.xsd"/>
-  <xs:include schemaLocation="include/geometryType.xsd"/>
-  <xs:include schemaLocation="include/identifierType.xsd"/>
-  <xs:include schemaLocation="include/materialType.xsd"/>
-  <xs:include schemaLocation="include/methodType.xsd"/>
-  <xs:include schemaLocation="include/relationType.xsd"/>
-  <xs:include schemaLocation="include/resourceType.xsd"/>
-  <xs:include schemaLocation="include/sampleType.xsd"/>
-  <xs:include schemaLocation="include/sridType.xsd"/>
-
-  <xs:annotation>
-    <xs:documentation>
 	International Geo Sample Number (IGSN) Metadata Kernel
 	Description Schema
-	Version 1.0
-        November 15, 2015
+	Version 1.1
+        03 July 2017
 	W3C XML Schema validated by oXygen XML Editor v17.1
-	(c)2011-2016, IGSN e.V.
+	(CC-BY)2011-2017, IGSN e.V.
         info@igsn.org
     </xs:documentation>
   </xs:annotation>
