@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.0" targetNamespace="http://schema.igsn.org/description/1.0" elementFormDefault="qualified" xml:lang="EN" version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://schema.igsn.org/description/1.1" 
+  targetNamespace="http://schema.igsn.org/description/1.1" 
+  elementFormDefault="qualified" xml:lang="EN" version="1.0">
   <xs:simpleType name="resourceType" id="resourceType">
+    <xs:annotation>
+      <xs:documentation>
+        High level categorization of the kind of resource, used as the type for an attribute of the resource root element. 
+        Note that the resource element also has a resourceTypes child element that is a sequence of resourceType elements
+        defined as a union of the enumerations for featureType, sampleType and collectionType.  
+      </xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="Feature"/>
       <xs:enumeration value="Sample"/>
