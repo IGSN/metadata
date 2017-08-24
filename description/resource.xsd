@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.igsn.org/description/1.1" targetNamespace="http://schema.igsn.org/description/1.1" elementFormDefault="qualified" version="1.1" xml:lang="EN">
 	<xs:include schemaLocation="include/accessType.xsd"/>
-	<xs:include schemaLocation="include/registrationType.xsd"/>
+  <xs:include schemaLocation="include/collectionType.xsd"/>
 	<xs:include schemaLocation="include/contributorType.xsd"/>
 	<xs:include schemaLocation="include/featureType.xsd"/>
 	<xs:include schemaLocation="include/geometryType.xsd"/>
@@ -10,8 +10,9 @@
 	<xs:include schemaLocation="include/methodType.xsd"/>
 	<xs:include schemaLocation="include/relationType.xsd"/>
 	<xs:include schemaLocation="include/registrationType.xsd"/>
+  <xs:include schemaLocation="include/sampleType.xsd"/>
 	<xs:include schemaLocation="include/sridType.xsd"/>
-	<xs:include schemaLocation="include/resourceType.xsd"/>
+  <xs:include schemaLocation="include/resourceType.xsd"/>
 	<xs:annotation>
 		<xs:documentation>
 
@@ -279,11 +280,14 @@
 
         <xs:element name="resourceTypes" minOccurs="0" maxOccurs="1">
           <xs:annotation>
-            <xs:documentation>(12.) resourceTypes - broad classification of this resource; must provide 1 term from ODM2 vocabulary (specimentype or samplingfeaturetype) plus 0-N additional terms from any vocabulary</xs:documentation>
+            <xs:documentation>(12.) resourceTypes - broad classification of this resource; must provide 1 term from 
+              ODM2 vocabulary (specimentype or samplingfeaturetype) plus 0-N additional terms from any 
+              vocabulary</xs:documentation>
           </xs:annotation>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="resourceType" minOccurs="1" maxOccurs="1">
+
                 <xs:simpleType>
                   <xs:union memberTypes="featureType sampleType collectionType"/>
                 </xs:simpleType>
