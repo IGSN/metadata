@@ -28,7 +28,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
 
 ## Overview
-![IGSN Resource overview](./images/IGSN-resource-description.png)
+![IGSN Resource overview](./images/IGSN-Resource-description.png)
 **Figure 1:** Ontology overview  
 ## Classes
 [Collection](#Collection),
