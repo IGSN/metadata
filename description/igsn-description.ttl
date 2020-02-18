@@ -156,15 +156,17 @@ igsn:Sample
 .
 igsn:isMetadataPublic
   a owl:DatatypeProperty ;
-  rdfs:label "Collection" ;
+  rdfs:label "is metadata public?" ;
   rdfs:range xsd:boolean ;
 .
 igsn:material
   a owl:ObjectProperty ;
+  rdfs:comment "(13.) materials - physical medium of this resource; must provide 1 term from ODM2 vocabulary (medium) plus 0-N additional terms from any vocabulary; typically only used for samples" ;
   rdfs:label "material" ;
 .
 igsn:registrant
   a owl:ObjectProperty ;
+  rdfs:comment "(8.) registrant (cf. datacite:publisher) - agent (person or organization) that registered the IGSN for this resource" ;
   rdfs:label "Registrant" ;
   rdfs:subPropertyOf dcterms:contributor ;
 .
